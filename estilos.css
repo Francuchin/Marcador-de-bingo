@@ -1,0 +1,80 @@
+body{
+	background: #DDD;
+}
+h1{
+	text-align: center;
+	height: 10vh;
+	padding: 0;
+	margin: 0;
+
+}
+#reinicio{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('reset.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+	width: 5vw;
+	padding-top: 5%;
+	transition: background-size .1s ease-in-out;
+	cursor: pointer;
+}
+#reinicio:hover{
+	background-size: 95%;
+}
+#reinicio:active{
+	background-size: 88%;
+}
+table, td{
+	border: 1px solid #b7aaaa;
+	border-radius: 3px;
+}
+table{
+	width: calc(75vw);
+    height: calc(85vh);
+    margin: auto;
+    background: #222;
+}
+td {
+    vertical-align: middle;
+    text-align: center;
+    background-color: white;
+    transition: background-color .1s ease-in-out;
+}
+td > div{
+	transition: all .1s ease-in-out;
+	background-color: inherit;
+	display: inline-block;
+	padding: 27%;
+	border-radius: 0;
+	cursor: pointer;
+}
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oxygen'), local('Oxygen-Regular'), url(https://fonts.gstatic.com/s/oxygen/v5/LC4u_jU27qpsdszDEgeU_3-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+30-39;
+}
+td > div::before{
+	content: attr(numero);
+	font-family: Oxygen;
+	position: fixed;
+	transform: translate(-50%,-50%);
+}
+td:hover{
+	font-weight: 700;
+	background-color: #EEE;
+}
+td > .marcado{	
+	border-radius: 50%;
+	font-weight: 900;
+	font-size: 2.1em;
+    background: red;
+  background: -webkit-linear-gradient(left top, red, #f894ad); 
+  background: -o-linear-gradient(bottom right, red, #f894ad); 
+  background: -moz-linear-gradient(bottom right, red, #f894ad);
+  background: linear-gradient(to bottom right, red, #f894ad);
+}
