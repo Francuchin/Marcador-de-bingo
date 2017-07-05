@@ -1,0 +1,242 @@
+*{
+	font-family: Oxygen;
+}
+body{
+	background-color: #DDD;
+	background: linear-gradient(45deg, #AAA, #FFF, #AAA);
+	background-size: 200% 200%;
+	-webkit-animation: Gradient 30s ease infinite;
+	-moz-animation: Gradient 30s ease infinite;
+	animation: Gradient 30s ease infinite;
+}
+    
+@-webkit-keyframes Gradient {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
+@-moz-keyframes Gradient {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
+@keyframes Gradient { 
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
+#bingo{
+	transition: all .5s ease-in-out;
+	z-index: 3;
+}
+
+gris{
+	transition: all .5s ease-in-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: rgba(20,20,20,.9);
+	opacity: 0;
+}
+gris.adelante{
+	z-index: 2;
+	opacity: 1;
+}
+#bingo.bingo{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) scale(5);
+	animation-name: bingo;
+	animation-iteration-count: 1;
+	animation-duration: 1.5s;
+	color: red;
+	text-shadow: .1px .1px 2px #8ef075;
+	cursor: pointer;
+	background: #84cdddcc;
+padding: 5px 20px;
+border-radius: 50px;
+}
+
+@-webkit-keyframes 'bingo' {
+    from {
+        -webkit-transform: translate(-50%,-50%) scale(0);
+        text-shadow: .1px .1px 2px #8ef075;
+    }
+    5% {
+        -webkit-transform: translate(-50%,-50%) scale(5.5);
+ 
+    }
+    15% {
+        -webkit-transform: translate(-50%,-50%) scale(5.75);
+    }
+    20% {
+        -webkit-transform: translate(-50%,-50%) scale(5.3);
+    }
+    25% {
+        -webkit-transform: translate(-50%,-50%) scale(5.75);
+    }
+    30% {
+        -webkit-transform: translate(-50%,-50%) scale(6);
+    }
+    35% {
+        -webkit-transform: translate(-50%,-50%) scale(5);
+        text-shadow: .1px .1px 3px #8ef075;
+    }
+    to {
+        -webkit-transform: translate(-50%,-50%) scale(5);
+        text-shadow: .1px .1px 2px #8ef075;
+    }
+}
+@-webkit-keyframes 'ultimo' {
+    from {
+        -webkit-transform: scale(1);
+    }
+    10% {
+        -webkit-transform: scale(1.5);
+ 
+    }
+    20% {
+        -webkit-transform: scale(.75);
+    }
+    30% {
+        -webkit-transform: scale(1.30);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+h1{
+	text-align: center;
+	height: 10vh;
+	padding: 0;
+	margin: 0;
+
+}
+
+#reinicio{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('reset.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+	width: 5vw;
+	padding-top: 5%;
+	transition: background-size .1s ease-in-out;
+	cursor: pointer;
+}
+#reinicio:hover{
+	background-size: 95%;
+}
+#reinicio:active{
+	background-size: 88%;
+}
+table, td{
+	border: 1px solid #b7aaaa;
+	border-radius: 3px;
+}
+table{
+	width: calc(75vw);
+    height: calc(85vh);
+    margin: auto;
+    background: #222;
+}
+.ultimo{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(10%, -50%);
+	margin: 0;
+	padding: 0;
+	width: calc(calc(calc(25vw / 2) * 8)/10);
+	height: calc(calc(calc(25vw / 2) * 8)/10);
+}
+.ultimo-titulo{
+	width: 100%;
+	height: 20%;
+	display: ruby;
+}
+.ultimo-numero{
+	font-size: 6vw;
+	border-radius: 50%;
+	width: 80%;
+	height: 80%;
+	background: linear-gradient(red,#c68888);
+	text-align: center;
+	vertical-align: middle;
+	
+}
+.ultimo-numero:not([hidden]){
+	animation-name: ultimo-numero;
+	animation-iteration-count: 1;
+	animation-duration: 4s;
+}
+@-webkit-keyframes 'ultimo-numero' {
+    from {
+        -webkit-transform: scale(1);
+    }
+    5% {
+        -webkit-transform: scale(1.5);
+ 
+    }
+    10% {
+        -webkit-transform: scale(.75);
+    }
+    15% {
+        -webkit-transform: scale(1.30);
+    }
+    20% {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+td {
+    vertical-align: middle;
+    text-align: center;
+    background-color: white;
+    transition: background-color .1s ease-in-out;
+}
+td > div{
+	transition: all .1s ease-in-out;
+	background-color: inherit;
+	display: inline-block;
+	padding: 4vh;
+	border-radius: 0;
+	cursor: pointer;
+}
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oxygen'), local('Oxygen-Regular'), url(https://fonts.gstatic.com/s/oxygen/v5/LC4u_jU27qpsdszDEgeU_3-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+30-39;
+}
+td > div::before{
+	content: attr(numero);
+	font-family: Oxygen;
+	position: fixed;
+	transform: translate(-50%,-50%);
+}
+td:hover{
+	font-weight: 700;
+	background-color: #EEE;
+}
+td > .marcado{	
+	border-radius: 50%;
+	font-weight: 900;
+	font-size: 2.1em;
+    background: red;
+  background: -webkit-linear-gradient(left top, red, #f894ad); 
+  background: -o-linear-gradient(bottom right, red, #f894ad); 
+  background: -moz-linear-gradient(bottom right, red, #f894ad);
+  background: linear-gradient(to bottom right, red, #f894ad);
+  animation: ultimo 1s;
+  animation-iteration-count: 1;
+}

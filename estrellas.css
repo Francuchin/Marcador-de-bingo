@@ -1,0 +1,78 @@
+#bingo > spark1,
+#bingo > spark2,
+#bingo > spark3,
+#bingo > spark4,
+#bingo > spark5,
+#bingo > spark6 {
+	display: none;
+	position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	background-image: url('star.png');
+	background-size: 100% 100%;
+	width: 2vw;
+	height: 2vw;
+}
+#bingo.bingo > spark1,
+#bingo.bingo > spark2,
+#bingo.bingo > spark3,
+#bingo.bingo > spark4,
+#bingo.bingo > spark5,
+#bingo.bingo > spark6{
+    display: block;
+    opacity: 0;
+	animation-name: spark;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+#bingo.bingo > spark1:before,
+#bingo.bingo > spark2:before,
+#bingo.bingo > spark3:before,
+#bingo.bingo > spark4:before,
+#bingo.bingo > spark5:before,
+#bingo.bingo > spark6:before{
+	/*content: 'R';*/
+
+}
+
+#bingo > spark1{
+	top: -1vw;
+	left: -1vw;
+}
+#bingo > spark2{
+	top: calc(100% - 1vw);
+	left: -1vw;
+}
+#bingo > spark3{
+	top: -1vw;
+	left: calc( 50% - 1vw);
+}
+#bingo > spark4{
+	top: calc(100% - 1vw);
+	left: calc( 50% - 1vw);
+}
+#bingo > spark5{
+	top: -1vw;
+	left: calc(100% - 1vw);
+}
+#bingo > spark6{
+	top: calc(100% - 1vw);
+	left: calc(100% - 1vw);
+}
+
+@-webkit-keyframes 'spark' {
+    from {
+       -webkit-transform: rotate(0deg)  scale(0);
+    }
+   	5%{
+   		opacity: .1;
+   	}
+    50% {
+   		opacity: .8;
+    }
+    to {
+   		opacity: 0;
+        -webkit-transform:rotate(360deg) scale(2.5);
+    }
+}
