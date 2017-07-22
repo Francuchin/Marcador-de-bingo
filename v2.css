@@ -1,0 +1,119 @@
+.fondo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('bg.jpg');
+	background-size: cover;
+	z-index: -1;
+	opacity: .3;
+}
+app{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+grilla{
+	display: table;
+	box-sizing: border-box;
+	padding: 1px;
+	border: 1px solid antiquewhite;
+	width: 96vw;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+border: 5px solid white;
+border-radius: 3px;
+background-image: linear-gradient(150deg, rgb(172, 242, 136), rgb(75, 197, 29));
+box-shadow: 0px 0px 0px 4px black, 1px 1px 5px 4px #b49b9b;
+
+}
+fila{
+	display: table-row;
+}
+celda{
+	display: table-cell;
+	text-align: center;
+	/*
+	color: red;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	background-image: url("sin_marcar.png");
+*/
+}
+celda.marcada{
+	animation: randomMov .5s ease;
+	animation-iteration-count: 1;	
+}
+celda[randomAnim]{
+	animation: randomMov 1s ease;
+	animation-iteration-count: 1;
+}
+@keyframes randomMov { 
+	0%{transform: scale(1)}
+	30%{transform: scale(1.2)}
+	32%{transform: scale(1.2)}
+	100%{transform: scale(1)}
+}
+sorteo{
+	transition: all .5s cubic-bezier(0.9, 1, 0.9, 1.1);	
+	position: absolute;
+	top: -50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(.2);
+}
+svg{
+	overflow: unset;
+}
+sorteo.mostrar{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	animation: mostrarSorteo .75s ease-in-out 3;
+}
+@keyframes mostrarSorteo { 
+	0%{transform:  translate(-50%, -50%) scale(1)}
+	40%{transform: translate(-50%, -50%) scale(1.2)}
+	100%{transform: translate(-50%, -50%) scale(1)}
+}
+submenu{
+	transition: all .5s;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 5px 40px;
+	border-top-left-radius: 100%;
+	border-top-right-radius: 100%;
+	opacity:0;
+	
+}
+submenu:hover{
+	opacity:  1;
+}
+subItem{
+	transition: all .3s;
+	margin: auto;
+	position:static;
+	font-size: 5em;
+	color: rgb(0,40,9);
+	text-shadow: 1px 1px 0 black,-1px -1px 0 black,1px -1px 0 black,-1px 1px 0 black;
+	cursor: pointer;
+}
+subitem:hover{
+	font-size: 8em;
+	text-shadow: 1px 1px 1px #333,
+		-1px -1px 1px #333,
+		1px -1px 1px #333,
+		-1px 1px 1px #333;
+	
+}
